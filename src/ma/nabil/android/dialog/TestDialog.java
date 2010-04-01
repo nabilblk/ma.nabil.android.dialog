@@ -1,7 +1,10 @@
 package ma.nabil.android.dialog;
 
+
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -42,6 +45,16 @@ public class TestDialog extends Activity {
 
 						}
 					});
+					new AlertDialog.Builder(TestDialog.this)
+    				.setTitle("Erreur de téléchargement")
+    				.setMessage("Une erreur est survenue lors du téléchargement : Erreur Inconnue")
+    				.setIcon(R.drawable.star_big_on)
+    				.setNeutralButton("Ok",
+    				new DialogInterface.OnClickListener() {
+    				public void onClick(DialogInterface dialog,
+    				int which) {
+    				}
+    				}).show();
 				} catch (Exception e) {
 					mHandler.post(new Runnable() {
 
