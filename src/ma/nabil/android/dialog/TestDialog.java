@@ -55,5 +55,6 @@ public class TestDialog extends Activity {
 
 			}
 		};
+		t.start();
 	}
 }
